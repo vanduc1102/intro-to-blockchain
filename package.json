@@ -1,0 +1,27 @@
+{
+  "name": "intro-to-blockchain",
+  "version": "1.0.0",
+  "description": "Simple sample for blockchain",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon --watch ./server server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vanduc1102/intro-to-blockchain.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vanduc1102/intro-to-blockchain/issues"
+  },
+  "homepage": "https://github.com/vanduc1102/intro-to-blockchain#readme",
+  "devDependencies": {
+    "nodemon": "^1.17.5"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3"
+  }
+}
