@@ -6,17 +6,10 @@ const app = express();
 app.use(bodyParser.json());
 
 
-app.get('/block', (req, res) => res.json(blockChain.getBlockChain()));
-app.post('/block', (req, res) => {
+app.get('/blocks', (req, res) => res.json(blockChain.getBlockChain()));
+app.post('/mine-block', (req, res) => {
 	let blockData = req.body.data;
 	res.json(blockChain.generateNextBlock(blockData));
-});
-
-app.post('/mineBlock', (req, res) => {
-	var newBlock = generateNextBlock(req.body);
-	addBlock(newBlock);
-	console.log('block added: ' + JSON.stringify(newBlock));
-	res.json(newBlock);
 });
 app.listen(http_port, () => console.log('Listening http on port: ' + http_port));
 
