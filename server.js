@@ -6,10 +6,11 @@ const app = express();
 app.use(bodyParser.json());
 
 
-app.get('/blocks', (req, res) => res.json(blockChain.getBlockChain()));
-app.post('/mine-block', (req, res) => {
+app.get('/api/blocks', (req, res) => res.json(blockChain.getBlockChain()));
+app.post('/api/mine-block', (req, res) => {
 	let blockData = req.body.data;
 	res.json(blockChain.generateNextBlock(blockData));
 });
+
 app.listen(http_port, () => console.log('Listening http on port: ' + http_port));
 
