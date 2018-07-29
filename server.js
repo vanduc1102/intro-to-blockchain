@@ -7,10 +7,12 @@ app.use(bodyParser.json());
 
 
 app.get('/api/blocks', (req, res) => res.json(blockChain.getBlockChain()));
-app.post('/api/mine-block', (req, res) => {
+app.post('/api/blocks/mining', (req, res) => {
 	let blockData = req.body.data;
 	res.json(blockChain.generateNextBlock(blockData));
 });
 
-app.listen(http_port, () => console.log('Listening http on port: ' + http_port));
+let server = app.listen(http_port, () => console.log('Listening http on port: ' + http_port));
+server.timeout = 5 * 60 * 1000;
+
 
