@@ -17,4 +17,4 @@ Get all block:
 
 Create new Block:
 
-`curl -H "Content-Type: application/json" -X POST -d '{"data":"new block."}' http://localhost:3000/api/mine-block`
+`curl -H "Content-Type: application/json" -X POST -d '{"data":"new block."}' http://localhost:3000/api/blocks/mining`
