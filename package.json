@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon --watch ./server server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint server.js server/"
   },
   "repository": {
     "type": "git",
@@ -19,10 +20,10 @@
   },
   "homepage": "https://github.com/vanduc1102/intro-to-blockchain#readme",
   "devDependencies": {
+    "eslint": "^7.25.0",
     "nodemon": "^1.17.5"
   },
   "dependencies": {
-    "body-parser": "^1.18.3",
     "express": "^4.16.3"
   }
 }
