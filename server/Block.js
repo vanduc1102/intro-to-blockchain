@@ -8,6 +8,6 @@ class Block {
     this.nonce = nonce;
     this.difficulty = difficulty;
   }
-};
+}
 
 module.exports = Block;

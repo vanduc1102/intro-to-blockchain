@@ -38,13 +38,13 @@ class BlockChain {
       }
       nonce++;
     }
-  };
+  }
 
   addBlock(newBlock) {
     if (this.isValidNewBlock(newBlock, this.getLatestBlock())) {
       this.blockchain.push(newBlock);
     }
-  };
+  }
 
   calculateHash(index, previousHash, timestamp, data, difficulty, nonce) {
     const hashData = index + previousHash + timestamp + data + difficulty + nonce;
@@ -58,7 +58,7 @@ class BlockChain {
     const hashInBinary = this.hexToBinary(hash);
     const requiredPrefix = '0'.repeat(difficulty);
     return hashInBinary.startsWith(requiredPrefix);
-  };
+  }
 
   hexToBinary(hashHex) {
       let hashBinary= '';
@@ -76,7 +76,7 @@ class BlockChain {
           }
       }
       return hashBinary;
-  };
+  }
 
   getBlockChain() {
     return this.blockchain;
@@ -93,7 +93,7 @@ class BlockChain {
       && typeof block.previousHash === 'string'
       && typeof block.timestamp === 'number'
       && typeof block.data === 'string';
-  };
+  }
 
   calculateHashForBlock(block) {
     return this.calculateHash(block.index, block.previousHash, block.timestamp, block.data,
@@ -104,7 +104,7 @@ class BlockChain {
     let min = 15,
     max = 22;
     return Math.floor(Math.random() * (max - min + 1)) + min;
-  };
+  }
 
   isValidNewBlock(newBlock, previousBlock) {
     if (!this.isValidBlockStructure(newBlock)) {
@@ -118,7 +118,7 @@ class BlockChain {
       return false;
     }
     return true;
-  };
+  }
 
 }
 
