@@ -17,13 +17,11 @@ class BlockChain {
     );
   }
 
-  generateNextBlock(blockData) {
+  generateNextBlock(blockData, difficulty = 0) {
     const previousBlock = this.getLatestBlock();
     const nextIndex = previousBlock.index + 1;
     const nextTimestamp = Date.now();
-
-    const difficulty = this.getDifficulty();
-    console.log("current difficulty: "+ difficulty);
+    console.log("current difficulty: " + difficulty);
     const newBlock = this.findBlock(nextIndex, previousBlock.hash, nextTimestamp, blockData, difficulty);
     this.addBlock(newBlock);
     return newBlock;
@@ -56,26 +54,26 @@ class BlockChain {
 
   checkHashMatchesDifficulty(hash, difficulty) {
     const hashInBinary = this.hexToBinary(hash);
-    const requiredPrefix = '0'.repeat(difficulty);
+    const requiredPrefix = difficulty ? '0'.repeat(difficulty) : "0";
     return hashInBinary.startsWith(requiredPrefix);
   }
 
   hexToBinary(hashHex) {
-      let hashBinary= '';
-      const lookupTable = {
-          '0': '0000', '1': '0001', '2': '0010', '3': '0011', '4': '0100',
-          '5': '0101', '6': '0110', '7': '0111', '8': '1000', '9': '1001',
-          'a': '1010', 'b': '1011', 'c': '1100', 'd': '1101',
-          'e': '1110', 'f': '1111'
-      };
-      for (let i = 0; i < hashHex.length; i = i + 1) {
-          if (lookupTable[hashHex[i]]) {
-            hashBinary += lookupTable[hashHex[i]];
-          } else {
-              return null;
-          }
+    let hashBinary = '';
+    const lookupTable = {
+      '0': '0000', '1': '0001', '2': '0010', '3': '0011', '4': '0100',
+      '5': '0101', '6': '0110', '7': '0111', '8': '1000', '9': '1001',
+      'a': '1010', 'b': '1011', 'c': '1100', 'd': '1101',
+      'e': '1110', 'f': '1111'
+    };
+    for (let i = 0; i < hashHex.length; i = i + 1) {
+      if (lookupTable[hashHex[i]]) {
+        hashBinary += lookupTable[hashHex[i]];
+      } else {
+        return null;
       }
-      return hashBinary;
+    }
+    return hashBinary;
   }
 
   getBlockChain() {
@@ -97,12 +95,12 @@ class BlockChain {
 
   calculateHashForBlock(block) {
     return this.calculateHash(block.index, block.previousHash, block.timestamp, block.data,
-       block.difficulty, block.nonce);
+      block.difficulty, block.nonce);
   }
 
   getDifficulty() {
     let min = 15,
-    max = 22;
+      max = 22;
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 

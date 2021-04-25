@@ -1,0 +1,13 @@
+
+### Get all blocks
+GET http://localhost:3000/api/blocks
+
+
+### Mint a new block
+
+POST http://localhost:3000/api/blocks/mining?difficulty=22
+content-type: application/json
+
+{
+    "data": "{{$guid}}-[{{$timestamp}}]"
+}
