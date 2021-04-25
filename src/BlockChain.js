@@ -13,7 +13,7 @@ class BlockChain {
       '816534932c2b7154836da6afc367695e6337db8a921823784c14378abed4f7d7',
       '',
       Date.now(),
-      'my genesis block!!'
+      '2021-04-24 "MacKenzie Scott Gave Away Billions. The Scam Artists Followed. - The New York Times".'
     );
   }
 
@@ -21,7 +21,7 @@ class BlockChain {
     const previousBlock = this.getLatestBlock();
     const nextIndex = previousBlock.index + 1;
     const nextTimestamp = Date.now();
-    console.log("current difficulty: " + difficulty);
+    console.log("Current difficulty: " + difficulty);
     const newBlock = this.findBlock(nextIndex, previousBlock.hash, nextTimestamp, blockData, difficulty);
     this.addBlock(newBlock);
     return newBlock;
