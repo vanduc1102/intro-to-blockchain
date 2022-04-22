@@ -21,10 +21,21 @@ yarn start
 ```
 
 ## Available API
-get all block:
 
-`curl http://localhost:3000/api/blocks`
+### Using CURL
+Get all block:
+
+```
+curl http://localhost:3000/api/blocks
+```
 
 Create new Block:
 
-`curl -H "Content-Type: application/json" -X POST -d '{"data":"new block."}' http://localhost:3000/api/blocks/mining`
+```
+curl -H "Content-Type: application/json" -X POST -d '{"data":"new block."}' http://localhost:3000/api/blocks/mining
+
+```
+
+### [VS Code HttpClient](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)
+
+`docs/api.http`
