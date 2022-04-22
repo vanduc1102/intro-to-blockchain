@@ -1,8 +1,13 @@
 # intro-to-blockchain
 Simple sample for blockchain
 
-## Get start 
-`npm run dev`
+## Get start
+
+- Install dependencies
+`yarn install`
+
+- Start
+`yarn start`
 
 ## Available API
 get all block:

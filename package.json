@@ -20,11 +20,11 @@
   },
   "homepage": "https://github.com/vanduc1102/intro-to-blockchain#readme",
   "devDependencies": {
-    "eslint": "^7.25.0",
-    "nodemon": "^1.17.5"
+    "eslint": "^7.32.0",
+    "nodemon": "^2.0.15"
   },
   "dependencies": {
-    "express": "^4.16.3",
+    "express": "^4.17.3",
     "morgan": "^1.10.0"
   }
 }
