@@ -2,12 +2,23 @@
 Simple sample for blockchain
 
 ## Get start
+- Install NodeJs with [NVM](https://github.com/nvm-sh/nvm)
+
+```
+nvm use
+```
 
 - Install dependencies
-`yarn install`
+
+```
+yarn install
+```
 
 - Start
-`yarn start`
+
+```
+yarn start
+```
 
 ## Available API
 get all block:
